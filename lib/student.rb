@@ -24,7 +24,10 @@ class Student
   end
 
   def self.create(name:, grade:)
-    self.new(name, grade).tap do {|student| student.save}
+    # self.new(name, grade).tap do {|student| student.save}
+    student = self.new(name, grade)
+    student.save
+    student
   end
 
 end
